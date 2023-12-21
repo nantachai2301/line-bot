@@ -1,5 +1,5 @@
 {
-  "port" : "3000",
-  "channelAccessToken": "S1IIf91/+1NcXW17biyDVoAXMyW4EGimAZNhaOKKrUt0/Bw+i2RfqgIkttpe02vEyz3LRj4ufFeYBbBaLDbQ0s0ezFQym4nxtQYDeJRK/TfPeP6OYNugtrKo8O//JLtjsU7oNeNt08CuikRZoM/jYwdB04t89/1O/w1cDnyilFU=",
-  "channelSecret": "df841734ac0fe30d8e271c1b59cdea16"
+  "port" : "5000",
+  "channelAccessToken": "20tsH8Bco5DC2cMzXARKWGOVTI8w5LA+gud3F8wqdkiVUibpbmDbjT11s5MEwOmU8knqm95CU0gmWjsSetosEKEny4YbqgTyNL+lvREgj7fmMVyiY3MSRqBNw2cv4FFiRaYaxtFJlpxuu+m+iwU+DwdB04t89/1O/w1cDnyilFU=",
+  "channelSecret": "75b797a3f1f4898d26ac08ec7c39349e"
 }

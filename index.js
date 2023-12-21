@@ -22,6 +22,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     if (event.replyToken === '0' ||
       event.replyToken === 'f') {
       return;
+
     }
     return handleEvent(event);
   }))
@@ -88,31 +89,30 @@ function handleEvent(event) {
   }
 }
 
-
-
-//function รับค่าที่ส่งมาให้ส่งกลับไปว่ารับอะไรมา
+// function รับค่าที่ส่งมาให้ส่งกลับไปว่ารับอะไรมา
 function handleText(message, replyToken) {
-  return replyText(replyToken, message.text);
+  // เพื่อตอบกลับข้อความที่ได้รับ
+  return replyText(replyToken, `${message.text}`);
 }
 
 function handleImage(message, replyToken) {
-  return replyText(replyToken, 'Got Image');
+  return replyText(replyToken, 'คุณส่งรูปภาพ');
 }
 
 function handleVideo(message, replyToken) {
-  return replyText(replyToken, 'Got Video');
+  return replyText(replyToken, 'คุณส่งวิดีโอ');
 }
 
 function handleAudio(message, replyToken) {
-  return replyText(replyToken, 'Got Audio');
+  return replyText(replyToken, 'คุณส่งไฟล์เสียง');
 }
 
 function handleLocation(message, replyToken) {
-  return replyText(replyToken, 'Got Location');
+  return replyText(replyToken, 'คุณส่งโลเคชั่น');
 }
 
 function handleSticker(message, replyToken) {
-  return replyText(replyToken, 'Got Sticker');
+  return replyText(replyToken, 'คุณส่งสติกเกอร์');
 }
 
 const port = config.port;
