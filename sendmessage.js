@@ -1,21 +1,36 @@
-const {responserCase} = require('./responseCase')
+const {responserCase,responseimg} = require('./responseCase')
 const line = require("@line/bot-sdk");
 const config = require("./config.json");
 const client = new line.Client(config);
-const replyText = (token, texts) => {
-    texts = Array.isArray(texts) ? texts : [texts];
-    return client.replyMessage(
-      token,
-      texts.map((text) => ({ type: "text", text }))
-    );
-  };
+const replyText = (token, texts, imageMessage = null) => {
+// console.log({imageMessage});
+  // if (imageMessage) {
+  //   const messages = {
+  //     type: 'image',
+  //     originalContentUrl: imageMessage,
+  //     previewImageUrl: imageMessage,
+  //   };
+
+  //   return client.replyMessage(token, [messages]);
+  // } else {
+  //   const messages = {
+  //     type: 'text',
+  //     text: texts,
+  //   };
+
+    return client.replyMessage(token, [texts]);
+  // }
+};
+
+
+
 // function รับค่าที่ส่งมาให้ส่งกลับไปว่ารับอะไรมา
 function handleText(message, replyToken) {
     return replyText(replyToken, responserCase(message));
   }
   
   function handleImage(message, replyToken) {
-    return replyText(replyToken, "คุณส่งรูปภาพ");
+    return replyText(replyToken,responseimg(message));
   }
   
   function handleVideo(message, replyToken) {
